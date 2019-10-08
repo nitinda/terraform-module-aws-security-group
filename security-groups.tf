@@ -10,6 +10,7 @@ resource "aws_security_group" "security_group" {
       to_port     = sg_ingress_rules.value["to_port"]
       protocol    = sg_ingress_rules.value["protocol"]
       cidr_blocks = sg_ingress_rules.value["cidr_blocks"]
+      description = sg_ingress_rules.value["description"]
     }
   }
 

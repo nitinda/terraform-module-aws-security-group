@@ -15,6 +15,6 @@ variable "common_tags" {
 }
 
 variable "sg_ingress_rules" {
-    description = ""
-  type = list(map(string))
+    description = "Ingress rules for security group"
+    type        = list(map(string))
 }
