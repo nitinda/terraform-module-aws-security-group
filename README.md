@@ -25,9 +25,6 @@ From branch : *terrform-11*
 
 - *Security Group (Terraform 11 supported code)*
 
-From branch : *terrform-12* *work in progress*
-
-- *Security Group (Terraform 12 supported code - work in progres)*
 
 
 ---
@@ -59,22 +56,27 @@ module "<layer>-s3-<AccountID>" {
 The variables required in order for the module to be successfully called from the deployment repository are the following:
 
 
-| Variable               |          Description         |    Type    |
-|------------------------|------------------------------|------------|
-|                        |                              |            |
+| Variable                      | Description                                 | Type            |
+|-------------------------------|---------------------------------------------|-----------------|
+| name_prefix                   | Name prefix                                 | string          |
+| description                   | description                                 | string          |
+| vpc_id                        | VPC ID                                      | String          |
+| common_tags                   | Tag                                         | map             |
+| revoke_rules_on_delete        | Instruct Terraform to revoke                | string          |
+| ingress                       | Ingress Rules                               | list of maps    |
+| egress                        | Egress Rules                                | list of maps    |
 
 
 
-Details are in respective branch.
 
 
 ## Outputs
 
 - *id*
 - *arn*
+- *name*
 
 
-Details are in respective branch.
 
 
 ### Usage
