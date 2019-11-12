@@ -1,8 +1,8 @@
 resource "aws_security_group" "security_group" {
-  name_prefix = var.sg_name_prefix
-  description = var.sg_description
-  vpc_id      = var.sg_vpc_id
-  revoke_rules_on_delete = true
+  name_prefix            = var.name_prefix
+  name_prefix            = var.name_prefix
+  vpc_id                 = var.vpc_id
+  revoke_rules_on_delete = var.revoke_rules_on_delete 
 
   dynamic "ingress" {
     for_each = var.sg_ingress_rules
