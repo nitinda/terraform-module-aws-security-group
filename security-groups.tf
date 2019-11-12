@@ -5,7 +5,7 @@ resource "aws_security_group" "security_group" {
   revoke_rules_on_delete = var.revoke_rules_on_delete 
 
   dynamic "ingress" {
-    for_each = var.sg_ingress_rules
+    for_each = var.ingress_rules
     content {
       from_port   = ingress.value["from_port"]
       to_port     = ingress.value["to_port"]

@@ -1,12 +1,12 @@
-variable "sg_name_prefix" {
+variable "name_prefix" {
     description = "Creates a unique name beginning with the specified prefix."
 }
 
-variable "sg_description" {
+variable "description" {
     description = "The security group description. Defaults to Managed by Terraform."
 }
 
-variable "sg_vpc_id" {
+variable "vpc_id" {
     description = "The VPC ID."
 }
 
@@ -14,7 +14,7 @@ variable "common_tags" {
     description = "A mapping of tags to assign to the resource."
 }
 
-variable "sg_ingress_rules" {
+variable "ingress_rules" {
     description = "Ingress rules for security group"
     type        = list(map(string))
 }
