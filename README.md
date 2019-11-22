@@ -3,7 +3,7 @@
 
 ## General
 
-This module may be used to create security group resources in AWS cloud provider..
+This module may be used to create **_Security Group with inline rules_** resources in AWS cloud provider..
 
 ---
 
@@ -21,11 +21,11 @@ This module deploys aws services details are in respective feature branches.
 
 Below we are able to check the resources that are being created as part of this module call:
 
-From branch : *terrform-11*
+From branch : *terrform-11/master*
 
 - *Security Group (Terraform 11 supported code)*
 
-From branch : *terrform-12* *work in progress*
+From branch : *terrform-12/master* *work in progress*
 
 - *Security Group (Terraform 12 supported code - work in progres)*
 
