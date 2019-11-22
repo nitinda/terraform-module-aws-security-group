@@ -46,6 +46,42 @@ To use this module, add the following call to your code:
 module "<layer>-security-group-<AccountID>" {
   source = "git::https://github.com/nitinda/terraform-module-aws-security-group.git?ref=terraform-11/master"
 
+  providers = {
+    "aws" = "aws.services"
+  }
+
+  # Tags
+  common_tags = "${merge(var.common_tags, map(
+    "Name", "sg-ec2",
+    "ManagedBy", "Terraform"
+  ))}"
+
+  # Security Groups
+  name_prefix            = "sg-ec2-"
+  description            = "The EC2 security group that allows traffic from whitelisted ips"
+  vpc_id                 = "${data.terraform_remote_state.network_container_services_shared_services.vpc_id}"
+  revoke_rules_on_delete = true
+  ingress                = [
+    {
+      from_port   = 80
+      to_port     = 80
+      protocol    = "tcp"
+      description = "Ingress rule that allows traffic from subnets"
+      cidr_blocks = [
+        "10.30.0.0/16"  #VPC Cidr
+      ]
+    }
+  ]
+  egress                 = [
+    {
+      from_port   = 0
+      to_port     = 0
+      protocol    = "-1"
+      cidr_blocks = ["0.0.0.0/0"]
+      description = "The egress rule allows all ports"
+    }
+  ]
+
 
 }
 ```
