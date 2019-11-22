@@ -59,9 +59,8 @@ module "<layer>-security-group-<AccountID>" {
 The variables required in order for the module to be successfully called from the deployment repository are the following:
 
 
-| Variable               |          Description         |    Type    |
-|------------------------|------------------------------|------------|
-|                        |                              |            |
+|         **_Variable_**        |            **_Description_**             |   **_Type_**   |
+|-------------------------------|------------------------------------------|----------------|
 
 
 
