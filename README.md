@@ -21,20 +21,20 @@ This module deploys aws services details are in respective feature branches.
 
 Below we are able to check the resources that are being created as part of this module call:
 
-From branch : *terrform-11/master*
+From branch : **_terrform-11/master_**
 
-- *Security Group (Terraform 11 supported code)*
+- **_Security Group_** *(Terraform 11 supported code)*
 
-From branch : *terrform-12/master* *work in progress*
+From branch : **_terrform-12/master_** *work in progress*
 
-- *Security Group (Terraform 12 supported code - work in progres)*
+- **_Security Group_** *(Terraform 12 supported code - work in progres)*
 
 
 ---
 
 ## Below are the resources that are launched by this module
 
-- *Security Group*
+- **_Security Group_**
 
 
 ---
@@ -46,7 +46,7 @@ From branch : *terrform-12/master* *work in progress*
 To use this module, add the following call to your code:
 
 ```tf
-module "<layer>-s3-<AccountID>" {
+module "<layer>-security-group-<AccountID>" {
   source = "git::https://github.com/nitinda/terraform-module-aws-security-group.git?ref=master"
 
 
@@ -70,8 +70,8 @@ Details are in respective branch.
 
 ## Outputs
 
-- *id*
-- *arn*
+- **_id_**
+- **_arn_**
 
 
 Details are in respective branch.
@@ -108,4 +108,4 @@ data "terraform_remote_state" "<module_name>" {
 ```
 
 ## Authors
-Module maintained by Module maintained by the - Nitin Das
+Module maintained by Module maintained by the - **_Nitin Das_**
