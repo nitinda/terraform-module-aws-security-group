@@ -59,7 +59,7 @@ module "<layer>-security-group-<AccountID>" {
   # Security Groups
   name_prefix            = "sg-ec2-"
   description            = "The EC2 security group that allows traffic from whitelisted ips"
-  vpc_id                 = "${data.terraform_remote_state.network_container_services_shared_services.vpc_id}"
+  vpc_id                 = "${var.vpc_id}"
   revoke_rules_on_delete = true
   ingress                = [
     {
