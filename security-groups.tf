@@ -25,7 +25,6 @@ resource "aws_security_group" "security_group" {
       protocol        = egress.value["protocol"]
       cidr_blocks     = [egress.value["cidr_blocks"]]
       description     = egress.value["description"]
-      self            = egress.value["self"]
       security_groups = [egress.value["security_groups"]]
     }
   }
