@@ -108,10 +108,10 @@ The variables required in order for the module to be successfully called from th
 | name_prefix                   | Name prefix                                 | string          |
 | description                   | description                                 | string          |
 | vpc_id                        | VPC ID                                      | String          |
-| common_tags                   | Tag                                         | map             |
+| common_tags                   | Tag                                         | map(string)     |
 | revoke_rules_on_delete        | Instruct Terraform to revoke                | string          |
-| ingress_rules                 | Ingress Rules                               | list of maps    |
-| egress_rules                  | Egress Rules                                | list of maps    |
+| ingress_rules                 | Ingress Rules                               | list(object)    |
+| egress_rules                  | Egress Rules                                | list(object)    |
 
 
 
