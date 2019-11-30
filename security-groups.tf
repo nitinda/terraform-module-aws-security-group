@@ -17,17 +17,17 @@ resource "aws_security_group" "security_group" {
     }
   }
 
-  dynamic "egress" {
-    for_each = var.egress_rules
-    content {
-      from_port       = egress.value["from_port"]
-      to_port         = egress.value["to_port"]
-      protocol        = egress.value["protocol"]
-      cidr_blocks     = [egress.value["cidr_blocks"]]
-      description     = egress.value["description"]
-      security_groups = [egress.value["security_groups"]]
-    }
-  }
+  // dynamic "egress" {
+  //   for_each = var.egress_rules
+  //   content {
+  //     from_port       = egress.value["from_port"]
+  //     to_port         = egress.value["to_port"]
+  //     protocol        = egress.value["protocol"]
+  //     cidr_blocks     = [egress.value["cidr_blocks"]]
+  //     description     = egress.value["description"]
+  //     security_groups = [egress.value["security_groups"]]
+  //   }
+  // }
 
   tags = var.common_tags
 
