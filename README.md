@@ -46,6 +46,53 @@ To use this module, add the following call to your code:
 module "<layer>-security-group-<AccountID>" {
   source = "git::https://github.com/nitinda/terraform-module-aws-security-group.git?ref=terraform-12/master"
 
+  providers = {
+    aws = aws.services
+  }
+
+  # Tags
+  common_tags = merge(
+    var.common_tags,
+    {
+      "Name"      = "service-sg"
+      "ManagedBy" = "Terraform"
+    },
+  )
+
+  # Security Groups
+  name_prefix            = "service-sg-"
+  description            = "Code Build EC2 Instance security group that allows traffic from whitelisted ips"
+  vpc_id                 = var.vpc_id
+  revoke_rules_on_delete = true
+  ingress_rules = [
+    {
+      from_port        = 22
+      to_port          = 22
+      protocol         = "tcp"
+      description      = "Ingress rule that allows traffic from subnets"
+      cidr_blocks      = [ var.vpc_cidr ]
+      self             = false
+      security_groups  = []
+      ipv6_cidr_blocks = []
+      prefix_list_ids  = []
+    }
+  ]
+  egress_rules = [
+    {
+      from_port       = 0
+      to_port         = 0
+      protocol        = "-1"
+      cidr_blocks     = ["0.0.0.0/0"]
+      description     = "The egress rule allows all ports"
+      security_groups = ""
+      self             = false
+      security_groups  = []
+      ipv6_cidr_blocks = []
+      prefix_list_ids  = []
+    },
+  ]
+}
+
 
 }
 ```
@@ -63,8 +110,8 @@ The variables required in order for the module to be successfully called from th
 | vpc_id                        | VPC ID                                      | String          |
 | common_tags                   | Tag                                         | map             |
 | revoke_rules_on_delete        | Instruct Terraform to revoke                | string          |
-| ingress                       | Ingress Rules                               | list of maps    |
-| egress                        | Egress Rules                                | list of maps    |
+| ingress_rules                 | Ingress Rules                               | list of maps    |
+| egress_rules                  | Egress Rules                                | list of maps    |
 
 
 
