@@ -12,9 +12,15 @@ variable "vpc_id" {
 
 variable "common_tags" {
     description = "A mapping of tags to assign to the resource."
+    type        = map(string)
 }
 
 variable "ingress_rules" {
     description = "Ingress rules for security group"
+    type        = list(map(string))
+}
+
+variable "egress_rules" {
+    description = "Egress rules for security group"
     type        = list(map(string))
 }

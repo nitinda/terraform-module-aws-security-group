@@ -3,14 +3,14 @@
 
 ## General
 
-This module may be used to create security group resources in AWS cloud provider..
+This module may be used to create Security Group resources in AWS cloud provider..
 
 ---
 
 
 ## Prerequisites
 
-This module needs Terraform 0.11.10 or newer.
+This module needs Terraform 0.12.16 or newer.
 You can download the latest Terraform version from [here](https://www.terraform.io/downloads.html).
 
 This module deploys aws services details are in respective feature branches.
@@ -21,9 +21,9 @@ This module deploys aws services details are in respective feature branches.
 
 Below we are able to check the resources that are being created as part of this module call:
 
-From branch : *terrform-12*
+From branch : **_terrform-12/master_**
 
-- *Security Group (Terraform 12 supported code)*
+- **_Security Group (Terraform 12 supported code)_**
 
 
 
@@ -31,7 +31,7 @@ From branch : *terrform-12*
 
 ## Below are the resources that are launched by this module
 
-- *Security Group*
+- **_Security Group_**
 
 
 ---
@@ -43,8 +43,8 @@ From branch : *terrform-12*
 To use this module, add the following call to your code:
 
 ```tf
-module "<layer>-s3-<AccountID>" {
-  source = "git::https://github.com/nitinda/terraform-module-aws-security-group.git?ref=master"
+module "<layer>-security-group-<AccountID>" {
+  source = "git::https://github.com/nitinda/terraform-module-aws-security-group.git?ref=terraform-12/master"
 
 
 }
@@ -56,7 +56,7 @@ module "<layer>-s3-<AccountID>" {
 The variables required in order for the module to be successfully called from the deployment repository are the following:
 
 
-| Variable                      | Description                                 | Type            |
+|        **_Variable_**         |               **_Description_**               |   **_Type_**    |
 |-------------------------------|---------------------------------------------|-----------------|
 | name_prefix                   | Name prefix                                 | string          |
 | description                   | description                                 | string          |
@@ -72,9 +72,9 @@ The variables required in order for the module to be successfully called from th
 
 ## Outputs
 
-- *id*
-- *arn*
-- *name*
+- **_id_**
+- **_arn_**
+- **_name_**
 
 
 
@@ -110,4 +110,4 @@ data "terraform_remote_state" "<module_name>" {
 ```
 
 ## Authors
-Module maintained by Module maintained by the - Nitin Das
+Module maintained by Module maintained by the - **_Nitin Das_**
