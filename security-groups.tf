@@ -13,7 +13,7 @@ resource "aws_security_group" "security_group" {
       cidr_blocks     = [ingress.value["cidr_blocks"]]
       description     = ingress.value["description"]
       self            = ingress.value["self"]
-      security_groups = [ingress.value["security_groups"]]
+      security_groups = [split(",",ingress.value["security_groups"])]
     }
   }
 
