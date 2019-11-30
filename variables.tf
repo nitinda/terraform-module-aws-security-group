@@ -34,8 +34,6 @@ variable "ingress_rules" {
   }))
 }
 
-
-
 variable "egress_rules" {
     description = "Egress rules for security group"
     type        = list(object({
