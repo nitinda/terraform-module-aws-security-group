@@ -21,8 +21,18 @@ variable "common_tags" {
 
 variable "ingress_rules" {
     description = "Ingress rules for security group"
-    type        = list(map(string))
+    type        = list(object({
+        from_port       = string
+        to_port         = number
+        protocol        = string
+        cidr_blocks     = list(string)
+        description     = string
+        self            = bool
+        security_groups = list(string)
+  }))
 }
+
+
 
 variable "egress_rules" {
     description = "Egress rules for security group"
