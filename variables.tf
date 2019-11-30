@@ -21,10 +21,10 @@ variable "common_tags" {
 
 variable "ingress_rules" {
     description = "Ingress rules for security group"
-    type        = list(map(string))
+    type        = list(map)
 }
 
 variable "egress_rules" {
     description = "Egress rules for security group"
-    type        = list(map(string))
+    type        = list(map)
 }
