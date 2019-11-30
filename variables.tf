@@ -24,7 +24,7 @@ variable "ingress_rules" {
     type        = list(map(string))
 }
 
-// variable "egress_rules" {
-//     description = "Egress rules for security group"
-//     type        = list(map(string))
-// }
+variable "egress_rules" {
+    description = "Egress rules for security group"
+    type        = list(map(string))
+}
