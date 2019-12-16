@@ -3,14 +3,14 @@
 
 ## General
 
-This module may be used to create Security Group resources in AWS cloud provider..
+This module may be used to create **_Security Group_** resources in AWS cloud provider..
 
 ---
 
 
 ## Prerequisites
 
-This module needs Terraform 0.12.16 or newer.
+This module needs **_Terraform 0.12.16_** or newer.
 You can download the latest Terraform version from [here](https://www.terraform.io/downloads.html).
 
 This module deploys aws services details are in respective feature branches.
@@ -71,10 +71,6 @@ module "<layer>-security-group-<AccountID>" {
       protocol         = "tcp"
       description      = "Ingress rule that allows traffic from subnets"
       cidr_blocks      = [ var.vpc_cidr ]
-      self             = false
-      security_groups  = []
-      ipv6_cidr_blocks = []
-      prefix_list_ids  = []
     }
   ]
   egress_rules = [
@@ -84,12 +80,7 @@ module "<layer>-security-group-<AccountID>" {
       protocol        = "-1"
       cidr_blocks     = ["0.0.0.0/0"]
       description     = "The egress rule allows all ports"
-      security_groups = ""
-      self             = false
-      security_groups  = []
-      ipv6_cidr_blocks = []
-      prefix_list_ids  = []
-    },
+    }
   ]
 }
 
@@ -103,15 +94,15 @@ module "<layer>-security-group-<AccountID>" {
 The variables required in order for the module to be successfully called from the deployment repository are the following:
 
 
-|        **_Variable_**         |               **_Description_**               |   **_Type_**    |
+|        **_Variable_**         |               **_Description_**             |   **_Type_**    |
 |-------------------------------|---------------------------------------------|-----------------|
 | name_prefix                   | Name prefix                                 | string          |
 | description                   | description                                 | string          |
 | vpc_id                        | VPC ID                                      | String          |
 | common_tags                   | Tag                                         | map(string)     |
 | revoke_rules_on_delete        | Instruct Terraform to revoke                | string          |
-| ingress_rules                 | Ingress Rules                               | list(object)    |
-| egress_rules                  | Egress Rules                                | list(object)    |
+| ingress_rules                 | Ingress Rules                               | any             |
+| egress_rules                  | Egress Rules                                | any             |
 
 
 
