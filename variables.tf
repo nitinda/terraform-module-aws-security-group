@@ -21,30 +21,10 @@ variable "common_tags" {
 
 variable "ingress_rules" {
     description = "Ingress rules for security group"
-    type        = list(object({
-        from_port        = string
-        to_port          = number
-        protocol         = string
-        cidr_blocks      = list(string)
-        description      = string
-        self             = bool
-        security_groups  = list(string)
-        ipv6_cidr_blocks = list(string)
-        prefix_list_ids  = list(string)
-  }))
+    type        = any
 }
 
 variable "egress_rules" {
     description = "Egress rules for security group"
-    type        = list(object({
-        from_port        = string
-        to_port          = number
-        protocol         = string
-        cidr_blocks      = list(string)
-        description      = string
-        self             = bool
-        security_groups  = list(string)
-        ipv6_cidr_blocks = list(string)
-        prefix_list_ids  = list(string)
-  }))
+    type        = any
 }
