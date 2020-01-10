@@ -17,17 +17,11 @@ _This module deploys aws services details are in respective feature branches._
 
 ---
 
-## Features Branches
+
+## Below are the resources that are launched by this module
 
 _Below we are able to check the resources that are being created as part of this module call:_
 
-- **_Security Group_**
-
-
-
----
-
-## Below are the resources that are launched by this module
 
 - **_Security Group_**
 
