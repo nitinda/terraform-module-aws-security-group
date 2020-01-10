@@ -10,7 +10,7 @@ _This module may be used to create_ **_Security Group_** _resources in AWS cloud
 
 ## Prerequisites
 
-_This module needs_ **_Terraform 0.12.16_** _or newer._
+_This module needs_ **_Terraform 0.12.18_** _or newer._
 _You can download the latest Terraform version from [here](https://www.terraform.io/downloads.html)._
 
 _This module deploys aws services details are in respective feature branches._
