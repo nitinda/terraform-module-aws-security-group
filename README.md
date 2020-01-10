@@ -3,23 +3,23 @@
 
 ## General
 
-This module may be used to create **_Security Group_** resources in AWS cloud provider..
+_This module may be used to create_ **_Security Group_** _resources in AWS cloud provider...._
 
 ---
 
 
 ## Prerequisites
 
-This module needs **_Terraform 0.12.16_** or newer.
-You can download the latest Terraform version from [here](https://www.terraform.io/downloads.html).
+_This module needs_ **_Terraform 0.12.16_** _or newer._
+_You can download the latest Terraform version from [here](https://www.terraform.io/downloads.html)._
 
-This module deploys aws services details are in respective feature branches.
+_This module deploys aws services details are in respective feature branches._
 
 ---
 
 ## Features Branches
 
-Below we are able to check the resources that are being created as part of this module call:
+_Below we are able to check the resources that are being created as part of this module call:_
 
 - **_Security Group_**
 
@@ -38,7 +38,7 @@ Below we are able to check the resources that are being created as part of this 
 
 ## Using this repo
 
-To use this module, add the following call to your code:
+_To use this module, add the following call to your code:_
 
 ```tf
 module "<layer>-security-group-<AccountID>" {
@@ -87,7 +87,7 @@ module "<layer>-security-group-<AccountID>" {
 
 ## Inputs
 
-The variables required in order for the module to be successfully called from the deployment repository are the following:
+_The variables required in order for the module to be successfully called from the deployment repository are the following:_
 
 
 |**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** |
@@ -125,4 +125,4 @@ _The output variable is able to be accessed through terraform state file using t
 ```
 
 ## Authors
-_Module maintained by Module maintained by the_ - **_Nitin Das_**
+_Module maintained by Module maintained by the -_**_Nitin Das_**
