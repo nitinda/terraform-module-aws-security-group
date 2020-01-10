@@ -80,8 +80,6 @@ module "<layer>-security-group-<AccountID>" {
       description     = "The egress rule allows all ports"
     }
   ]
-}
-
 
 }
 ```
