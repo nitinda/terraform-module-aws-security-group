@@ -21,9 +21,7 @@ This module deploys aws services details are in respective feature branches.
 
 Below we are able to check the resources that are being created as part of this module call:
 
-From branch : **_terrform-12/master_**
-
-- **_Security Group (Terraform 12 supported code)_**
+- **_Security Group_**
 
 
 
@@ -51,7 +49,7 @@ module "<layer>-security-group-<AccountID>" {
   }
 
   # Tags
-  common_tags = merge(
+  tags = merge(
     var.common_tags,
     {
       "Name"      = "service-sg"
@@ -94,17 +92,15 @@ module "<layer>-security-group-<AccountID>" {
 The variables required in order for the module to be successfully called from the deployment repository are the following:
 
 
-|        **_Variable_**         |               **_Description_**             |   **_Type_**    |
-|-------------------------------|---------------------------------------------|-----------------|
-| name_prefix                   | Name prefix                                 | string          |
-| description                   | description                                 | string          |
-| vpc_id                        | VPC ID                                      | String          |
-| common_tags                   | Tag                                         | map(string)     |
-| revoke_rules_on_delete        | Instruct Terraform to revoke                | string          |
-| ingress_rules                 | Ingress Rules                               | any             |
-| egress_rules                  | Egress Rules                                | any             |
-
-
+|**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** |
+|:----|:----|-----:|-----:|
+| **_name\_prefix_** | Name prefix | _string_ | **_Required_** |
+| **_description_** | description | _string_ | **_Required_** |
+| **_vpc\_id_** | VPC ID | _string_ | **_Required_** |
+| **_tags_** | Resource Tag | _map(string)_ | **_Required_** |
+| **_revoke\_rules\_on\_delete_** | Instruct Terraform to revoke | _string_ | **_Optional_** *(Default - **false**)* |
+| **_ingress\_rules_** | Ingress Rules | _any_ | **_Optional_** *(Default - **[]**)* |
+| **_egress\_rules_** | Egress Rules | _any_ | **_Optional_** *(Default - **[]**)* |
 
 
 

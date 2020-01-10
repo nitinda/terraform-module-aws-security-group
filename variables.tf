@@ -8,13 +8,15 @@ variable "description" {
 
 variable "revoke_rules_on_delete" {
   description = "Instruct Terraform to revoke all of the Security Groups attached ingress and egress rules before deleting the rule itself."
+  type        = bool
+  default     = false
 }
 
 variable "vpc_id" {
     description = "The VPC ID."
 }
 
-variable "common_tags" {
+variable "tags" {
     description = "A mapping of tags to assign to the resource."
     type        = map(string)
 }
@@ -22,9 +24,11 @@ variable "common_tags" {
 variable "ingress_rules" {
     description = "Ingress rules for security group"
     type        = any
+    default     = []
 }
 
 variable "egress_rules" {
     description = "Egress rules for security group"
     type        = any
+    default     = []
 }
