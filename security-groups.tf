@@ -10,7 +10,7 @@ resource "aws_security_group" "security_group" {
   }
 
   dynamic "ingress" {
-      for_each = length(var.ingress_rules) == 0 ? [] : var.ingress_rules
+      for_each = var.ingress_rules
       content {
           from_port        = lookup(ingress.value, "from_port", null)
           to_port          = lookup(ingress.value, "to_port", null)
@@ -25,7 +25,7 @@ resource "aws_security_group" "security_group" {
   }
 
   dynamic "egress" {
-      for_each = length(var.egress_rules) == 0 ? [] : var.egress_rules
+      for_each = var.egress_rules
       content {
           from_port        = lookup(egress.value, "from_port", null)
           to_port          = lookup(egress.value, "to_port", null)
