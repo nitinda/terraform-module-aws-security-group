@@ -1,52 +1,53 @@
-# Terraform Module Name: terraform-module-aws-security-group
+# _Terraform Module Name: terraform-module-aws-security-group_
+_Terraform module for_ **_AWS Security Group_**
 
 
-## General
+<!--BEGIN STABILITY BANNER-->
+---
 
-This module may be used to create **_Security Group with inline rules_** resources in AWS cloud provider..
+![_Code : Stable_](https://img.shields.io/badge/Code-Stable-brightgreen?style=for-the-badge&logo=github)
+
+> **_This is a stable example. It should successfully build out of the box_**
+>
+> _This examples does is built on Construct Libraries marked "Stable" and does not have any infrastructure prerequisites to build._
+
+---
+<!--END STABILITY BANNER-->
+
+
+## _General_
+
+_This module may be used to create_ **_Security Group_** _resources in AWS Cloud provider......._
 
 ---
 
 
-## Prerequisites
+## _Prerequisites_
 
-This module needs Terraform 0.11.10 or newer.
-You can download the latest Terraform version from [here](https://www.terraform.io/downloads.html).
+_This module needs Terraform 0.12.23 or newer._
+_You can download the latest Terraform version from_ [_here_](https://www.terraform.io/downloads.html).
 
-This module deploys aws services details are in respective feature branches.
-
----
-
-## Features Branches
-
-Below we are able to check the resources that are being created as part of this module call:
-
-From branch : **_terrform-11/master_**
-
-- **_Security Group_** *(Terraform 11 supported code)*
-
-From branch : **_terrform-12/master_** *work in progress*
-
-- **_Security Group_** *(Terraform 12 supported code - work in progres)*
-
+_This module deploys aws services details are in respective feature branches._
 
 ---
 
-## Below are the resources that are launched by this module
+## _Features_
+
+_Below we are able to check the resources that are being created as part of this module call:_
 
 - **_Security Group_**
 
 
 ---
 
-## Usage
+## _Usage_
 
-## Using this repo
+## _Using this repo_
 
-To use this module, add the following call to your code:
+_To use this module, add the following call to your code:_
 
 ```tf
-module "<layer>-security-group-<AccountID>" {
+module "security_group" {
   source = "git::https://github.com/nitinda/terraform-module-aws-security-group.git?ref=master"
 
 
@@ -54,57 +55,48 @@ module "<layer>-security-group-<AccountID>" {
 ```
 ---
 
-## Inputs
+## _Inputs_
 
-The variables required in order for the module to be successfully called from the deployment repository are the following:
+_The variables required in order for the module to be successfully called from the deployment repository are the following:_
 
-
-|         **_Variable_**        |            **_Description_**             |   **_Type_**   |
-|-------------------------------|------------------------------------------|----------------|
-
+|**_Variable_** | **_Description_** | **_Type_** | **_Argument Status_** |
+|:----|:----|-----:|:---:|
 
 
-Details are in respective branch.
+
+---
 
 
-## Outputs
+# _Outputs_
+
+### _General_
+
+_This module has the following outputs:_
 
 - **_id_**
 - **_arn_**
 
+---
 
-Details are in respective branch.
+### _Usage_
 
-
-### Usage
-In order for the variables to be accessed on module level please use the syntax below:
+_In order for the variables to be accessed at module level please use the syntax below:_
 
 ```tf
 module.<module_name>.<output_variable_name>
 ```
 
-If an output variable needs to be exposed on root level in order to be accessed through terraform state file follow the steps below:
 
-- Include the syntax above in the network layer output terraform file.
-- Add the code snippet below to the variables/global_variables file.
+_The output variable is able to be accessed through terraform state file using the syntax below:_
 
 ```tf
-data "terraform_remote_state" "<module_name>" {
-  backend = "s3"
-
-  config {
-    bucket = <bucket_name> (i.e. "s3-webstack-terraform-state")
-    key    = <state_file_relative_path> (i.e. "env:/${terraform.workspace}/4_Networking/terraform.tfstate")
-    region = <bucket_region> (i.e. "eu-central-1")
-  }
-}
+data.terraform_remote_state.<layer_name>.<output_variable_name>
 ```
 
-- The output variable is able to be accessed through terraform state file using the syntax below:
+---
 
-```tf
-"${data.terraform_remote_state.<module_name>.<output_variable_name>}"
-```
 
-## Authors
-Module maintained by Module maintained by the - **_Nitin Das_**
+
+## _Authors_
+
+_Module maintained by Module maintained by the -_ **_Nitin Das_**
