@@ -135,7 +135,6 @@ _The variables required in order for the module to be successfully called from t
 | **_tags_** | _A mapping of tags to assign to the resource_ | _map(string)_ | **_Optional <br/> (Default - {})_** |
 
 
-
 ---
 
 
