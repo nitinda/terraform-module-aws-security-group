@@ -76,6 +76,7 @@ _This module has the following outputs:_
 
 - **_id_**
 - **_arn_**
+- **_name_**
 
 ---
 
