@@ -1,5 +1,10 @@
 variable "name_prefix" {
-  description = "Creates a unique name beginning with the specified prefix."
+  description = "Creates a unique name beginning with the specified prefix"
+  default     = null
+}
+
+variable "name" {
+  description = "The name of the security group"
   default     = null
 }
 
