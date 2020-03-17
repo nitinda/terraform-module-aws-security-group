@@ -33,6 +33,7 @@ variable "revoke_rules_on_delete" {
 
 variable "vpc_id" {
     description = "The VPC ID"
+    default     = null
 }
 
 variable "tags" {
