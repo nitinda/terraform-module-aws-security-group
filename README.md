@@ -1,4 +1,4 @@
-# _Terraform Module Name: terraform-module-aws-security-group_
+# _Terraform Module: terraform-module-aws-security-group_
 _Terraform module for_ **_AWS Security Group_**
 
 
