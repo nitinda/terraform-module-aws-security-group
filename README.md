@@ -52,7 +52,7 @@ module "security_group" {
   description            = "EC2 Security Group that allows traffic from whitelisted ips"
   vpc_id                 = var.vpc_id
   revoke_rules_on_delete = true
-  ingress_rules = [
+  ingress = [
     {
         from_port   = 0
         to_port     = 0
@@ -61,7 +61,7 @@ module "security_group" {
         cidr_blocks = [ module.network.vpc_cidr ]
     }
   ]
-  egress_rules = [
+  egress = [
     {
       from_port   = 0
       to_port     = 0
@@ -82,7 +82,7 @@ module "security_group" {
   description            = "EC2 Security Group that allows traffic from whitelisted ips"
   vpc_id                 = var.vpc_id
   revoke_rules_on_delete = true
-  ingress_rules = [
+  ingress = [
     {
         from_port   = 0
         to_port     = 0
@@ -91,7 +91,7 @@ module "security_group" {
         cidr_blocks = [ module.network.vpc_cidr ]
     }
   ]
-  egress_rules = [
+  egress = [
     {
       from_port   = 0
       to_port     = 0
